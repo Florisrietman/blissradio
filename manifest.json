@@ -4,6 +4,7 @@
   "start_url": "/",
   "display": "fullscreen",
   "background_color": "#72ff72",
+  "theme_color": "#72ff72",
   "icons": [{
     "src": "https://raw.githubusercontent.com/Florisrietman/blissradio/main/logo2.png",
     "type": "image/png",
