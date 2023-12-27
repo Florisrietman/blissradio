@@ -1,0 +1,55 @@
+{
+  "name": "Bliss Radio",
+  "description": "A lightweight web-app that allows you to listen to the radio without ads.",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#72ff72",
+  "icons": [{
+    "src": "https://raw.githubusercontent.com/Florisrietman/blissradio/main/logo2.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  },
+  {
+    "src": "https://raw.githubusercontent.com/Florisrietman/blissradio/main/logo.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }],
+  "screenshots": [
+    {
+      "src": "https://raw.githubusercontent.com/Florisrietman/blissradio/main/desktop1.png",
+      "type": "image/png",
+      "sizes": "1366x768",
+      "form_factor": "wide"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/Florisrietman/blissradio/main/desktop2.png",
+      "type": "image/png",
+      "sizes": "1366x768",
+      "form_factor": "wide"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/Florisrietman/blissradio/main/desktop3.png",
+      "type": "image/png",
+      "sizes": "1366x768",
+      "form_factor": "wide"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/Florisrietman/blissradio/main/phone1.png",
+      "type": "image/png",
+      "sizes": "750x1500",
+       "form_factor": "narrow"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/Florisrietman/blissradio/main/phone2.png",
+      "type": "image/png",
+      "sizes": "750x1500",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/Florisrietman/blissradio/main/phone3.png",
+      "type": "image/png",
+      "sizes": "750x1500",
+      "form_factor": "narrow"
+    }
+  ]
+}
