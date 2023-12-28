@@ -8,12 +8,26 @@
   "icons": [{
     "src": "https://blissradio.github.io/logo2.png",
     "type": "image/png",
-    "sizes": "192x192"
+    "sizes": "192x192",
+    "purpose": "any"
   },
   {
     "src": "https://blissradio.github.io/logo.png",
     "type": "image/png",
-    "sizes": "512x512"
+    "sizes": "512x512",
+    "purpose": "any"
+  },
+  {
+    "src": "https://blissradio.github.io/maskable_icon_x512.png",
+    "type": "image/png",
+    "sizes": "512x512",
+    "purpose": "maskable"
+  },
+  {
+    "src": "https://blissradio.github.io/maskable_icon_x192.png",
+    "type": "image/png",
+    "sizes": "192x192",
+    "purpose": "maskable"
   }],
   "screenshots": [
     {
