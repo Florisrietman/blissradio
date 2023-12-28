@@ -28,6 +28,12 @@
     "type": "image/png",
     "sizes": "192x192",
     "purpose": "maskable"
+  },
+  {
+    "src": "https://blissradio.github.io/logomono.png",
+    "type": "image/png",
+    "sizes": "192x192",
+    "purpose": "monochrome"
   }],
   "screenshots": [
     {
