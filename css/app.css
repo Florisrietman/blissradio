@@ -409,10 +409,12 @@ div.white-player-playlist-controls {
     box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
     height: 64px;
-    width: 64px; }
+    width: 64px; 
+	margin-left: 10px;
+	margin-top: 10px;}
   div.white-player-playlist-controls div.playlist-controls {
     float: left;
-    margin-left: 25px;
+    margin-left: 15px;
     width: calc( 100% - 89px ); }
     div.white-player-playlist-controls div.playlist-controls div.playlist-meta-data {
       display: inline-block;
