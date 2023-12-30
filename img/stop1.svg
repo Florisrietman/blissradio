@@ -1,0 +1,6 @@
+<svg id="e1cfOiTWB5J1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><defs xmlns="http://www.w3.org/2000/svg">
+        <linearGradient x1="118.588967%" y1="-30.6928935%" x2="-9.20527766%" y2="107.785399%" id="linearGradient-1">
+            <stop stop-color="#B857E2" offset="0%"/>
+            <stop stop-color="#FA6733" offset="100%"/>
+        </linearGradient>
+    </defs><ellipse rx="16" ry="16" transform="translate(16 16)" stroke-width="0" fill="url(#linearGradient-1)"/><rect width="12.5" height="12.5" rx="3" ry="3" transform="translate(9.52068 9.349304)" fill="#fff" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1"/></svg>
