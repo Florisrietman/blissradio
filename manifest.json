@@ -2,7 +2,6 @@
   "name": "Bliss Radio",
   "description": "A lightweight web-app that allows you to listen to the radio without ads.",
   "start_url": "/",
-  "display_override": ["window-controls-overlay"],
   "display": "standalone",
   "background_color": "#72ff72",
   "theme_color": "#72ff72",
