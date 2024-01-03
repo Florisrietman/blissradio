@@ -132,6 +132,16 @@ Amplitude.init({
       "name": "NPO Radio 2",
       "url": "https://icecast.omroep.nl/radio2-bb-mp3",
       "cover_art_url": "https://fr1234.neocities.org/NPO_1.jpg"
+    },
+    {
+      "name": "NPO 3FM",
+      "url": "https://icecast.omroep.nl/3fm-bb-mp3",
+      "cover_art_url": "https://fr1234.neocities.org/NPO_1.jpg"
+    },
+    {
+      "name": "NPO 3FM KX",
+      "url": "http://icecast.omroep.nl/3fm-serioustalent-mp3",
+      "cover_art_url": "https://fr1234.neocities.org/NPO_1.jpg"
     }
   ],
    visualizations: [
