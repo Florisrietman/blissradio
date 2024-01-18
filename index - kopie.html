@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#72ff72"/>
+  <meta name="description" content="A lightweight web-app that allows you to listen to the radio without ads.">
+    <title>Bliss Radio</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="manifest" href="/manifest.json">
+    <!-- Include fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Google%20Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Product%20Sans&display=swap" rel="stylesheet"> 
+		<!-- Include Amplitude JS -->
+		<script type="text/javascript" src="https://blissradio.github.io/js/amplitude.js"></script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.3.2/dist/visualizations/michaelbromley.js"></script>
+                <script type="text/javascript" src="/offline.min.js"></script>
+		<!-- Include Style Sheet -->
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+                <link rel="stylesheet" type="text/css" href="/offline-theme-default.css"/>
+                <link rel="stylesheet" type="text/css" href="/css/offline-language-english.css"/>
+		<style>input[type='range'] {
+    -webkit-appearance: none !important;
+    background:#808080;
+    height:5px;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: url(https://blissradio.github.io/img/thumb.png);
+    border-radius:50%;
+    height:20px;
+    width:20px;
+} input[type='range']::-moz-range-thumb{background: url(https://blissradio.github.io/img/thumb.png); height: 20px; width: 20px; border: 0px;} .playlist-artist-album, .song-artist {color: darkslategray !important;} canvas {border-radius: 8px;}</style><script>
+if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register("/js/serviceworker.js");
+}
+</script>
+  </head>
+  <body style="margin: 0px;">
+        <div id="white-player" style="max-width:100%;max-height: 100vh; margin-top: 0px;">
+          <div class="white-player-top">
+            <div>
+              &nbsp;
+            </div>
+            
+            <div class="center">
+              <span class="now-playing"></span>
+            </div>
+            
+            <div>
+                <img loading="lazy" src="https://blissradio.github.io/img/minimize.svg" width="24px" height="24px" class="show-playlist" style="margin-right: 10px !important;"/>
+            </div></div>
+
+          <div id="white-player-center"><div class="amplitude-visualization" id="large-visualization" style="position: absolute; top: 16px; width: 280px; height: 280px; left: 50%; transform: translate(-50%, 0); border-radius: 8px;"></div>
+<img data-amplitude-song-info="cover_art_url" fetchpriority="high" class="main-album-art"/>
+            <div class="song-meta-data">
+              <span data-amplitude-song-info="name" class="song-name"></span>
+              <span data-amplitude-song-info="artist" class="song-artist"></span>
+              <center><img loading="lazy" src="https://blissradio.github.io/img/link.svg" width="24px" height="24px" style="vertical-align: middle;"><span data-amplitude-song-info="url" class="song-artist" style="vertical-align: middle;display: inline;"></span></center>
+
+            </div>
+
+            <div class="time-progress">
+              <div id="progress-container">
+                <input type="range" class="amplitude-song-slider"/>
+                <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
+                <progress id="song-buffered-progress" class="amplitude-buffered-progress" value="0"></progress>
+              </div>
+
+              <div class="time-container">
+                <span class="current-time">
+                  <span class="amplitude-current-minutes"></span>:<span class="amplitude-current-seconds"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div id="white-player-controls">
+            
+            <div class="amplitude-prev" id="previous"></div>
+            <div class="amplitude-stop" style="display: inline-block;height: 85px;width: 85px;cursor: pointer;background: url(https://blissradio.github.io/img/stop.svg);vertical-align: middle;margin-right: 16px;"></div>
+            <div class="amplitude-play-pause" id="play-pause"></div>
+            <div class="amplitude-next" id="next"></div>
+            <img loading="lazy" src="https://blissradio.github.io/img/volume.svg" width="30px" height="30px" style="vertical-align: middle;"><input type="range" class="amplitude-volume-slider" style="vertical-align: middle;"/>
+          </div>
+
+          <div id="white-player-playlist-container" style="max-width:100%;display: block;">
+            <span class="queue"></span>
+            <div class="white-player-up-next" style="color: black; padding-left: 6px; margin-top: 0px !important;">
+<span style=""><img loading="lazy" src="https://blissradio.github.io/img/logo3.png" width="38px" height="38px" style="vertical-align: bottom;">Bliss Radio <span class="close-playlist" style="position: fixed; right: 10px; margin-top: 5px;"><img loading="lazy" src="https://blissradio.github.io/img/maximize.svg" width="24px" height="24px"></span></span>
+            </div>
+
+            <div class="white-player-playlist" style="height: calc( 100% - 150px ); margin-top: 0px;">
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="0">
+                <img loading="lazy" src="https://blissradio.github.io/img/100-NL.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/leeuwicon_orange.png" style="margin-left: 0px; width: 14px; height: 14px;">100%NL</span>
+                  <span class="playlist-artist-album">De beste muziek van Nederland</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="1">
+                <img loading="lazy" src="https://scale.100p.nl/imageScaled/?site=100pnl&file=1561108081_Feest.jpg&w=120&h=120" width="48px" height="48px"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/leeuwicon_orange.png" style="margin-left: 0px; width: 14px; height: 14px;">100%NL Feest</span>
+                  <span class="playlist-artist-album">De leukste feesthits van Nederland</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="2">
+                <img loading="lazy" src="https://scale.100p.nl/imageScaled/?site=100pnl&file=1561108123_Liefde.jpg&w=120&h=120" width="48px" height="48px"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/leeuwicon_orange.png" style="margin-left: 0px; width: 14px; height: 14px;">100%NL Liefde</span>
+                  <span class="playlist-artist-album">Lovesongs</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="3">
+                <img loading="lazy" src="https://scale.100p.nl/imageScaled/?site=100pnl&file=1561108141_Nonstop.jpg&w=120&h=120" width="48px" height="48px"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/leeuwicon_orange.png" style="margin-left: 0px; width: 14px; height: 14px;">100%NL Non-stop</span>
+                  <span class="playlist-artist-album">De beste muziek van Nederland non-stop</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="4">
+                <img loading="lazy" src="https://scale.100p.nl/imageScaled/?site=100pnl&file=1561109013_nederpop.png&w=120&h=120" width="48px" height="48px"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/leeuwicon_orange.png" style="margin-left: 0px; width: 14px; height: 14px;">100%NL Nederpop</span>
+                  <span class="playlist-artist-album">Nederlandstalig Pop/Hits</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="5">
+                <img loading="lazy" src="https://blissradio.github.io/img/538.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/favicon.png" style="margin-left: 0px; width: 14px; height: 14px;">538</span>
+                  <span class="playlist-artist-album">The Beat Of The Moment - Pop/Hits</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="6">
+                <img loading="lazy" src="https://blissradio.github.io/img/538-1.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/favicon.png" style="margin-left: 0px; width: 14px; height: 14px;">538 Non-stop</span>
+                  <span class="playlist-artist-album">Een station, alle hits, non-stop! - Pop/Hits</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="7">
+                <img loading="lazy" src="https://blissradio.github.io/img/538-2.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/favicon.png" style="margin-left: 0px; width: 14px; height: 14px;">538 Zomer</span>
+                  <span class="playlist-artist-album">Zomerhits</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="8">
+                <img loading="lazy" src="https://blissradio.github.io/img/538-3.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/favicon.png" style="margin-left: 0px; width: 14px; height: 14px;">538 Top 50</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="9">
+                <img loading="lazy" src="https://blissradio.github.io/img/538-4.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/favicon.png" style="margin-left: 0px; width: 14px; height: 14px;">538 Classics</span>
+                  <span class="playlist-artist-album">Oldies/Classics</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="10">
+                <img loading="lazy" src="https://blissradio.github.io/img/538-5.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/favicon.png" style="margin-left: 0px; width: 14px; height: 14px;">538 Dance Dept.</span>
+                  <span class="playlist-artist-album">The best new dance music - Dance</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="11">
+                <img loading="lazy" src="https://blissradio.github.io/img/538-6.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/favicon.png" style="margin-left: 0px; width: 14px; height: 14px;">538 Ibiza</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="12">
+                <img loading="lazy" src="https://blissradio.github.io/img/Joe-4.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name">Joe</span><span class="playlist-artist-album">70s & 80s</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="13">
+                <img loading="lazy" src="https://blissradio.github.io/img/Joe-1.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name">Joe</span><span class="playlist-artist-album">80s & 90s</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="14">
+                <img loading="lazy" src="https://blissradio.github.io/img/Joe-2.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name">Joe</span><span class="playlist-artist-album">60s & 70s</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="15">
+                <img loading="lazy" src="https://blissradio.github.io/img/Joe-3.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name">Joe</span><span class="playlist-artist-album">Lage Landen</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="16">
+                <img loading="lazy" src="https://blissradio.github.io/img/Joe-5.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name">Joe</span><span class="playlist-artist-album">Easy</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="17">
+                <img loading="lazy" src="https://blissradio.github.io/img/Joe-6.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name">Joe</span><span class="playlist-artist-album">Top 2000</span>
+                </div>
+              </div>
+               <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="18">
+                <img loading="lazy" src="https://blissradio.github.io/img/joyradio1.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/logo(2).webp" style="margin-left: 0px; width: 100px; height: 29.75px;" alt="JoyRadio"></span><span class="playlist-artist-album">Groningen</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="19">
+                <img loading="lazy" src="https://blissradio.github.io/img/joyradio2.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/logo(2).webp" style="margin-left: 0px; width: 100px; height: 29.75px;" alt="JoyRadio"></span><span class="playlist-artist-album">Friesland/Drenthe</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="20">
+                <img loading="lazy" src="https://blissradio.github.io/img/joyradio3.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/logo(2).webp" style="margin-left: 0px; width: 100px; height: 29.75px;" alt="JoyRadio"></span><span class="playlist-artist-album">Twente</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="21">
+                <img loading="lazy" src="https://blissradio.github.io/img/joyradio4.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name"><img loading="lazy" src="https://blissradio.github.io/img/logo(2).webp" style="margin-left: 0px; width: 100px; height: 29.75px;" alt="JoyRadio"></span><span class="playlist-artist-album">Hoogeveen</span>
+                </div>
+              </div>
+              <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause" data-amplitude-song-index="22">
+                <img loading="lazy" src="https://blissradio.github.io/img/NPO_1.webp"/>
+
+                <div class="playlist-song-meta">
+                  <span class="playlist-song-name">NPO Radio 1</span><span class="playlist-artist-album">Wie luistert, weet meer - Nieuws/Sport</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="white-player-playlist-controls">
+              <img loading="lazy" data-amplitude-song-info="cover_art_url" class="playlist-album-art"/>
+
+              <div class="playlist-controls">
+                <div class="playlist-meta-data">
+                    <span data-amplitude-song-info="name" class="song-name"></span>
+                    <span data-amplitude-song-info="artist" class="song-artist"></span>
+                </div>
+
+                <div class="playlist-control-wrapper">                  
+                  <div class="amplitude-prev" id="playlist-previous"></div>
+                  <div class="amplitude-play-pause" id="playlist-play-pause"></div>
+                  <div class="amplitude-stop" style="background: url(https://blissradio.github.io/img/stop1.svg);display: inline-block;height: 32px;width: 32px;cursor: pointer;vertical-align: middle;"></div>
+                  <div class="amplitude-next" id="playlist-next"></div>
+                  <img loading="lazy" src="https://blissradio.github.io/img/volume1.svg" width="22.5px" height="22.5px" style="vertical-align: middle; padding: 4.85px; border-radius: 50%; background: #E1E1E1;"><input type="range" class="amplitude-volume-slider" style="vertical-align: middle;"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </body>
+  <!--
+			Include Resource Javascript
+	-->
+  <script type="text/javascript" src="js/functions.js"></script>
+</html>
