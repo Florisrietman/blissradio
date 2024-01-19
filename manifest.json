@@ -86,7 +86,8 @@
     {
       "name": "Stations",
       "url": "https://blissradio.github.io/",
-      "description": "Go to the radio stations."
+      "description": "Go to the radio stations list.",
+      "icons": [{ "src": "https://blissradio.github.io/favicon.ico", "sizes": "256x256" }]
     }
   ],
   "categories": [
