@@ -7,8 +7,6 @@
 top: 0px;}}
 @media all and (display-mode: window-controls-overlay) {
   div.white-player-up-next {
-  /* Make sure the `div` stays there, even when scrolling. */
-  position: fixed;
   /**
    * Gradient, because why not. Endless opportunities.
    * The gradient ends in `#36c`, which happens to be the app's
