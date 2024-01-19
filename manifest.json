@@ -73,5 +73,6 @@
       "sizes": "533x1080",
       "form_factor": "narrow"
     }
-  ]
+  ],
+  "edge_side_panel": {}
 }
