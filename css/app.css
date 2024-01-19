@@ -4,7 +4,7 @@
   }
 }
 @media screen and (max-height:240px){div.white-player-playlist-controls {position: fixed;
-top: 0px;}}
+top: 0px;} div#white-player-playlist-container{background-color: #F5F5F6;}}
 @media all and (display-mode: window-controls-overlay) {
   div.white-player-up-next {
   /**
