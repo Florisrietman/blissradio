@@ -7,7 +7,22 @@
 top: 0px;}}
 @media all and (display-mode: window-controls-overlay) {
   div.white-player-up-next {
-      background-color: #72ff72;
+  /* Make sure the `div` stays there, even when scrolling. */
+  position: fixed;
+  /**
+   * Gradient, because why not. Endless opportunities.
+   * The gradient ends in `#36c`, which happens to be the app's
+   * `<meta name="theme-color" content="#36c">`.
+   */
+  background-image: linear-gradient(90deg, #72ff72, #fff, 33%, #72ff72);
+  /* Use the environment variable for the left anchoring with a fallback. */
+  left: env(titlebar-area-x, 0);
+  /* Use the environment variable for the top anchoring with a fallback. */
+  top: env(titlebar-area-y, 0);
+  /* Use the environment variable for setting the width with a fallback. */
+  width: env(titlebar-area-width, 100%);
+  /* Use the environment variable for setting the height with a fallback. */
+  height: env(titlebar-area-height, 33px);
   } .close-playlist, div.white-player-top img.show-playlist {
 	  position: fixed;
 	  right: 240px !important;
