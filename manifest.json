@@ -1,5 +1,6 @@
 {
   "name": "Bliss Radio",
+  "short_name": "Bliss Radio",
   "description": "A lightweight web-app that allows you to listen to the radio without ads.",
   "start_url": "/",
   "display_override": ["window-controls-overlay"],
@@ -74,5 +75,17 @@
       "form_factor": "narrow"
     }
   ],
-  "edge_side_panel": {}
+  "edge_side_panel": {},
+  "scope": "/",
+  "orientation": "any",
+  "shortcuts": [
+    {
+      "name": "Stations",
+      "url": "https://blissradio.github.io/",
+      "description": "Go to the radio stations."
+    }
+  ],
+  "categories": [
+    "music"
+  ]
 }
