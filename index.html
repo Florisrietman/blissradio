@@ -38,6 +38,18 @@ input[type='range']::-webkit-slider-thumb {
 if ('serviceWorker' in navigator) {
    navigator.serviceWorker.register("/js/serviceworker.js");
 }
+</script><script>if ('mediaSession' in navigator) {
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+    title: 'Bliss Radio',
+    artwork: [
+        { src: 'https://blissradio.github.io/logo2.png', sizes: '192x192', type: 'image/png' },
+        { src: 'https://blissradio.github.io/logo.png', sizes: '512x512', type: 'image/png' },
+    ]
+    });
+    navigator.mediaSession.setActionHandler('seekbackward', function() {});
+    navigator.mediaSession.setActionHandler('seekforward', function() {});
+}
 </script>
   </head>
   <body style="margin: 0px; overflow: hidden; user-select: none; -ms-user-select: none; -webkit-user-select: none;">
