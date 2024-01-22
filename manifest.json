@@ -3,7 +3,6 @@
   "short_name": "Bliss Radio",
   "description": "A lightweight web-app that allows you to listen to the radio without ads.",
   "start_url": "/",
-  "id": "/",
   "launch_handler": {
     "client_mode": "auto"
 },
