@@ -125,11 +125,13 @@ Amplitude.init({
     },
     {
       "name": "NPO Radio 1",
+      "artist": "Wie luistert, weet meer - Nieuws/Sport",
       "url": "https://icecast.omroep.nl/radio1-bb-mp3",
       "cover_art_url": "https://fr1234.neocities.org/NPO_1.jpg"
     },
     {
       "name": "NPO Radio 2",
+      "artist": "De plek voor de nieuwste muziek en de beste artiesten - Pop/Oldies/Nederlandstalig",
       "url": "https://icecast.omroep.nl/radio2-bb-mp3",
       "cover_art_url": "https://fr1234.neocities.org/NPO_1.jpg"
     },
@@ -140,12 +142,25 @@ Amplitude.init({
     },
     {
       "name": "NPO 3FM",
+      "artist": "LAAT JE HOREN - Pop/Hits",
       "url": "https://icecast.omroep.nl/3fm-bb-mp3",
       "cover_art_url": "https://fr1234.neocities.org/NPO_1.jpg"
     },
     {
       "name": "NPO 3FM KX",
       "url": "http://icecast.omroep.nl/3fm-serioustalent-mp3",
+      "cover_art_url": "https://fr1234.neocities.org/NPO_1.jpg"
+    },
+    {
+      "name": "NPO Radio Klassiek",
+      "artist": "Klassieke muziek luisteren - Klassiek/Concerten",
+      "url": "https://icecast.omroep.nl/radio4-bb-mp3",
+      "cover_art_url": "https://fr1234.neocities.org/NPO_1.jpg"
+    },
+    {
+      "name": "NPO Radio 5",
+      "artist": "Je Voelt Je Thuis - Oldies/easy listening",
+      "url": "https://icecast.omroep.nl/radio5-bb-mp3",
       "cover_art_url": "https://fr1234.neocities.org/NPO_1.jpg"
     }
   ],
