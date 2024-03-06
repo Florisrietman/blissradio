@@ -1,0 +1,13 @@
+{
+    "ending_hour": "18",
+    "language": "nl",
+    "starting_hour": "8",
+    "tab": "day",
+    "tabs": [
+        "week",
+        "day"
+    ],
+    "timezone": "Europe/Amsterdam",
+    "title": "Somtoday",
+    "url": "https://elo.somtoday.nl/services/webdav/calendarfeed/1e1e5bbb-d899-4d4f-9017-29f2199dc832/9d1aa994-9199-41db-a61c-aa34c1c4ecef"
+}
